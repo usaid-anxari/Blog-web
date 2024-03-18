@@ -1,5 +1,5 @@
 import { Client, Account, ID } from "appwrite";
-import config from '../Config';
+import config from '../Config/config';
 
 
 export class AuthService {
@@ -39,8 +39,9 @@ export class AuthService {
         try {
             return await this.account.get();
         } catch (error) {
-            throw error
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
+
         return null;
     }
 
@@ -54,6 +55,6 @@ export class AuthService {
 
 }
 
-const authService = new AuthService();
+const authService = new AuthService({});
 
 export default authService;

@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import {useDispatch} from 'react-redux';
 import  authService  from "./Appwrite/auth";
 import { login, logout } from "./store/authSlice";
-import Navbar from './Components/Navbar';
-import Fotter from './Components/Fotter';
+import {Navbar,Footer} from './Components/Index'
 import { Outlet } from "react-router-dom";
 
 const App = () => {
@@ -29,7 +28,7 @@ const App = () => {
         <main>
         TODO:  <Outlet />
         </main>
-        <Fotter />
+        <Footer />
       </div>
     </div>
   ) : null

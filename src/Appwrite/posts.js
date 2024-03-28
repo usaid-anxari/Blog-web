@@ -1,5 +1,5 @@
 import { Client, Databases, Storage, Query, ID } from "appwrite";
-import config from "../Config";
+import config from "../Config/config";
 
 export class StorageService {
   client = new Client();
@@ -73,6 +73,7 @@ export class StorageService {
       );
     } catch (error) {
       console.log("Appwrite serive :: getPost :: error", error);
+      return false
     }
   }
   // GetAllPosts

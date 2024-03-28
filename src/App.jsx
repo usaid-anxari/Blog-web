@@ -8,6 +8,7 @@ import { Outlet } from "react-router-dom";
 const App = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch(); 
+  
   useEffect(()=>{
    authService.getCurrentUser()
    .then((userData)=>{
@@ -17,9 +18,7 @@ const App = () => {
       dispatch(logout())
     } 
    })
-   .finally(()=>(
-       setLoading(false)
-   ));
+   .finally(()=> setLoading(false))
   },[])
   return !loading ? (
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
